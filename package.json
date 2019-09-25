@@ -1,0 +1,43 @@
+{
+  "name": "react-visible-focus",
+  "version": "1.0.0",
+  "description": "A React component that emulates the :focus-visible spec",
+  "browser": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "keywords": [
+    "react",
+    "focus",
+    "visible",
+    "focus-visible",
+    "a11y",
+    "outline"
+  ],
+  "author": "Carlos Filoteo",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "jest": "^24.9.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0"
+  },
+  "devDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
