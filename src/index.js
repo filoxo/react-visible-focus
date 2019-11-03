@@ -16,15 +16,15 @@ export default function VisibleFocus({
 }) {
   const [focusVisible, setFocusVisible] = useState(false);
   const kbdHeuristic = useRef(false);
-  const onKeyDown = useCallback(e => {
-    kbdHeuristic.current = kbdHeuristicKeys.includes(e.key);
+
+  const onMouseDown = useCallback(e => {
+    kbdHeuristic.current = e.target.nodeName === "INPUT";
   }, []);
   const onFocus = useCallback(() => {
     setFocusVisible(kbdHeuristic.current);
   }, []);
-  const onClick = useCallback(() => {
-    setFocusVisible(false);
-    kbdHeuristic.current = false;
+  const onKeyDown = useCallback(e => {
+    kbdHeuristic.current = kbdHeuristicKeys.includes(e.key);
   }, []);
 
   return (
@@ -32,7 +32,7 @@ export default function VisibleFocus({
       {...props}
       onKeyDown={onKeyDown}
       onFocus={onFocus}
-      onClick={onClick}
+      onMouseDown={onMouseDown}
       className={!focusVisible ? className : null}
     >
       {children}
