@@ -12,7 +12,7 @@ export default {
   input: "src/index.js",
   output: [
     {
-      name: "reactVisibleFocus",
+      name: "ReactVisibleFocus",
       file: pkg.browser,
       format: "umd",
       globals: {
