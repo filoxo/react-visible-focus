@@ -15,7 +15,7 @@ export default function VisibleFocus({
   ...props
 }) {
   const [focusVisible, setFocusVisible] = useState(false);
-  const kbdHeuristic = useRef(false);
+  const kbdHeuristic = useRef(true);
 
   const onMouseDown = useCallback(e => {
     kbdHeuristic.current = e.target.nodeName === "INPUT";
