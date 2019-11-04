@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>react-visible-focus demo</title>
+  <style>
+    body {
+      background: steelblue;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    main {
+      background: white;
+      border-radius: 6px;
+      max-width: 500px;
+      padding: 0 20px;
+    }
+
+    #root {
+      text-align: center;
+    }
+
+    .focus-not-visible * {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+      <div id="root"></div>
+      <p>This component attempts to emulate the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">:focus-visible pseudoselector</a> behavior using similar heuristics but does not follow the spec completely. 
+      </p>
+      <p>
+        Focus styles are still displayed when focus is given to an input.
+      </p>
+  </main>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="./dist/react-visible-focus.umd.js"></script>
+  <script>
+  "use strict";
+
+  const e = React.createElement;
+  const App = () => e(
+    ReactVisibleFocus,
+    null, 
+    e('h1', null, "react-visible-focus"),
+    e('h2', { tabIndex: "0" }, "focusable subheader (click on me)"),
+    e('input', { type: 'text' }),
+    e('button', {type: 'button'}, "A button")  
+  );
+
+  ReactDOM.render(App(), document.querySelector("#root"));
+  </script>
+</body>
+</html>
