@@ -2,6 +2,8 @@
 
 This component attempts to emulate the [:focus-visible pseudoselector](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) behavior using similar heuristics but does not follow the spec completely
 
+See it in action at https://filoxo.github.io/react-visible-focus/
+
 ## Installation
 
 ```sh
