@@ -54,3 +54,9 @@ Provide the following CSS globally.
 | className | "focus-not-visible" | the class name to be applied when focus should not be visible |
 | elem | "div" | the wrapping element type; should always be a React element that renders an HTML node event handlers are bound to this |
 | ...rest | | any additional props are forwarded to the wrapper element |
+
+## Development 
+
+Run `yarn start` to run the example page with livereloading enabled.
+
+Run `yarn build` to create a production build.
