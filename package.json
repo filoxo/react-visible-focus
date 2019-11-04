@@ -10,7 +10,8 @@
   "scripts": {
     "test": "jest",
     "build": "NODE_ENV=production rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "deploy": "gh-pages --dist . --src '{index.html,dist/**/*}' --git git"
   },
   "keywords": [
     "react",
@@ -36,6 +37,7 @@
     "rollup-plugin-terser": "^5.1.2"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
