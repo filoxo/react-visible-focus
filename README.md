@@ -1,6 +1,6 @@
 # react-visible-focus
 
-This component attempts to emulate the [:focus-visible pseudoselector](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) behavior, though it does not follow the spec completely, using similar heuristics. 
+This component attempts to emulate the [:focus-visible pseudoselector](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) behavior using similar heuristics but does not follow the spec completely
 
 ## Installation
 
@@ -16,15 +16,41 @@ npm i -S react-visible-focus
 import FocusVisible from 'react-visible-focus';
 
 export default function YourComponent(props) {
-  // your component code
   return (
     <FocusVisible>{/* more components */}</FocusVisible>
   )
 }
 ```
 
+or via CDN
+
+```
+<script src="/react-visible-focus.umd.js"></script>
+
+<script>
+  const App = () => React.createElement(
+    ReactVisibleFocus,
+    null,
+    React.createElement("p", null, "Your app goes here")  
+  )
+  ReactDOM.render(App(), document.querySelector("#root"))
+</script>
+```
+
+## CSS
+
+Provide the following CSS globally. 
+
+```css
+.focus-not-visible * {
+  outline: none;
+}
+```
+
 ## Props
 
-*none* for now.
-
-
+| prop name | default value | description |
+|---|---|---|
+| className | "focus-not-visible" | the class name to be applied when focus should not be visible |
+| elem | "div" | the wrapping element type; should always be a React element that renders an HTML node event handlers are bound to this |
+| ...rest | | any additional props are forwarded to the wrapper element |

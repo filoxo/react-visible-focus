@@ -6,8 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>react-visible-focus demo</title>
   <style>
+    body {
+      background: steelblue;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    main {
+      background: white;
+      border-radius: 6px;
+      max-width: 500px;
+      padding: 0 20px;
+    }
+
     #root {
-      text-align: center; 
+      text-align: center;
     }
 
     .focus-not-visible * {
@@ -16,7 +34,14 @@
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <main>
+      <div id="root"></div>
+      <p>This component attempts to emulate the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible">:focus-visible pseudoselector</a> behavior using similar heuristics but does not follow the spec completely. 
+      </p>
+      <p>
+        Focus styles are still displayed when focus is given to an input.
+      </p>
+  </main>
 
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -34,7 +59,7 @@
     e('button', {type: 'button'}, "A button")  
   );
 
-  ReactDOM.render(e(App), document.querySelector("#root"));
+  ReactDOM.render(App(), document.querySelector("#root"));
   </script>
 </body>
 </html>
