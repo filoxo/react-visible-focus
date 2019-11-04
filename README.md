@@ -4,7 +4,7 @@ This component attempts to emulate the [:focus-visible pseudoselector](https://d
 
 ## Installation
 
-```bash
+```sh
 yarn add -S react-visible-focus
 # or
 npm i -S react-visible-focus
@@ -24,7 +24,7 @@ export default function YourComponent(props) {
 
 or via CDN
 
-```
+```html
 <script src="/react-visible-focus.umd.js"></script>
 
 <script>
