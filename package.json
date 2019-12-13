@@ -2,6 +2,8 @@
   "name": "react-visible-focus",
   "version": "1.0.1",
   "description": "A React component that emulates the :focus-visible spec",
+  "repository": "github:filoxo/react-visible-focus",
+  "homepage": "https://filoxo.github.io/react-visible-focus/",
   "browser": "dist/react-visible-focus.umd.js",
   "module": "dist/react-visible-focus.esm.js",
   "files": [
