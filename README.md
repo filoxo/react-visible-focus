@@ -1,8 +1,19 @@
 # react-visible-focus
 
+![](https://img.badgesize.io/https://unpkg.com/react-visible-focus/dist/react-visible-focus.umd.js?compression=gzip&label=umd%20gzipped)
+![](https://img.badgesize.io/https://unpkg.com/react-visible-focus/dist/react-visible-focus.esm.js?compression=gzip&label=esm%20gzipped)
+
 This component attempts to emulate the [:focus-visible pseudoselector](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) behavior using similar heuristics but does not follow the spec completely
 
 See it in action at https://filoxo.github.io/react-visible-focus/
+
+### Filesize
+
+UMD
+1.35KB minified, 698B gzipped
+
+ESM 
+1.1KB minified, 611B gzipped
 
 ## Installation
 
