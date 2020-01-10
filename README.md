@@ -7,14 +7,6 @@ This component attempts to emulate the [:focus-visible pseudoselector](https://d
 
 See it in action at https://filoxo.github.io/react-visible-focus/
 
-### Filesize
-
-UMD
-1.35KB minified, 698B gzipped
-
-ESM 
-1.1KB minified, 611B gzipped
-
 ## Installation
 
 ```sh
