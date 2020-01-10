@@ -1,21 +1,15 @@
 import React, { useState, useRef, useCallback } from "react";
 
-const kbdHeuristicKeys = [
-  "Tab",
-  "ArrowUp",
-  "ArrowDown",
-  "ArrowRight",
-  "ArrowLeft"
-];
-
 export default function VisibleFocus({
   children,
   className = "focus-not-visible",
   elem: Elem = "div",
   ...props
 }) {
-  const [focusVisible, setFocusVisible] = useState(false);
-  const kbdHeuristic = useRef(true);
+  const s = useState(false),
+    focusVisible = s[0],
+    setFocusVisible = s[1], // optimized to prevent using babel destructuring helper
+    kbdHeuristic = useRef(true);
 
   const onMouseDown = useCallback(e => {
     kbdHeuristic.current = e.target.nodeName === "INPUT";
@@ -24,7 +18,14 @@ export default function VisibleFocus({
     setFocusVisible(kbdHeuristic.current);
   }, []);
   const onKeyDown = useCallback(e => {
-    kbdHeuristic.current = kbdHeuristicKeys.includes(e.key);
+    // Keyboard heuristic keys
+    kbdHeuristic.current = [
+      "Tab",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowRight",
+      "ArrowLeft"
+    ].includes(e.key);
   }, []);
 
   return (
