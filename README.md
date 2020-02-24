@@ -47,7 +47,7 @@ or via CDN
 Provide the following CSS globally. 
 
 ```css
-.focus-not-visible * {
+[data-focus-visible="false"] * {
   outline: none;
 }
 ```
@@ -56,8 +56,7 @@ Provide the following CSS globally.
 
 | prop name | default value | description |
 |---|---|---|
-| className | "focus-not-visible" | the class name to be applied when focus should not be visible |
-| elem | "div" | the wrapping element type; should always be a React element that renders an HTML node event handlers are bound to this |
+| elem | "div" | the wrapping element type; should always be a React element that renders an HTML node as event handlers are bound to this |
 | ...rest | | any additional props are forwarded to the wrapper element |
 
 ## Development 
