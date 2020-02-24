@@ -34,7 +34,7 @@ export default function VisibleFocus({
       onKeyDown={onKeyDown}
       onFocus={onFocus}
       onMouseDown={onMouseDown}
-      className={!focusVisible ? className : null}
+      data-focus-visible={!focusVisible ? "false" : null}
     >
       {children}
     </Elem>
