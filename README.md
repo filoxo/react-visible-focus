@@ -52,6 +52,26 @@ Provide the following CSS globally.
 }
 ```
 
+### styled-components example
+
+CSS-in-JS options, such as styled-components, are easily supported through the `elem` prop.
+
+```js
+import React from 'react'
+import styled from 'styled-components'
+import FocusVisible from 'react-visible-focus'
+
+const MyContainer = styled.div`
+  // Other styles
+
+  &[data-focus-visible="false"] * {
+    outline: none;
+  }
+`
+// usage
+<FocusVisible elem={MyContainer}>{/*...*/}</FocusVisible>
+```
+
 ## Props
 
 | prop name | default value | description |
