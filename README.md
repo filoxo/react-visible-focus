@@ -47,17 +47,36 @@ or via CDN
 Provide the following CSS globally. 
 
 ```css
-.focus-not-visible * {
+[data-focus-visible="false"] * {
   outline: none;
 }
+```
+
+### styled-components example
+
+CSS-in-JS options, such as styled-components, are easily supported through the `elem` prop.
+
+```js
+import React from 'react'
+import styled from 'styled-components'
+import FocusVisible from 'react-visible-focus'
+
+const MyContainer = styled.div`
+  // Other styles
+
+  &[data-focus-visible="false"] * {
+    outline: none;
+  }
+`
+// usage
+<FocusVisible elem={MyContainer}>{/*...*/}</FocusVisible>
 ```
 
 ## Props
 
 | prop name | default value | description |
 |---|---|---|
-| className | "focus-not-visible" | the class name to be applied when focus should not be visible |
-| elem | "div" | the wrapping element type; should always be a React element that renders an HTML node event handlers are bound to this |
+| elem | "div" | the wrapping element type; should always be a React element that renders an HTML node as event handlers are bound to this |
 | ...rest | | any additional props are forwarded to the wrapper element |
 
 ## Development 
