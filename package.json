@@ -10,11 +10,13 @@
     "dist/"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "yarn run-p -r start \"cypress run\"",
+    "test:watch": "yarn run-p start \"cypress open\"",
+    "cypress": "cypress",
     "build": "NODE_ENV=production rollup -c",
     "start": "rollup -c -w",
     "predeploy": "yarn build",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn run-s test build",
     "deploy": "gh-pages --dist . --src '{index.html,dist/**/*}' --git git"
   },
   "keywords": [
