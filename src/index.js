@@ -1,8 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
 
 export default function VisibleFocus({
-  children,
-  className = "focus-not-visible",
   elem: Elem = "div",
   ...props
 }) {
@@ -14,9 +12,11 @@ export default function VisibleFocus({
   const onMouseDown = useCallback(e => {
     kbdHeuristic.current = e.target.nodeName === "INPUT";
   }, []);
+
   const onFocus = useCallback(() => {
     setFocusVisible(kbdHeuristic.current);
   }, []);
+
   const onKeyDown = useCallback(e => {
     // Keyboard heuristic keys
     kbdHeuristic.current = [
@@ -35,8 +35,6 @@ export default function VisibleFocus({
       onFocus={onFocus}
       onMouseDown={onMouseDown}
       data-focus-visible={!focusVisible ? "false" : null}
-    >
-      {children}
-    </Elem>
+    />
   );
 }
