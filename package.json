@@ -13,7 +13,8 @@
     "test": "jest",
     "build": "NODE_ENV=production rollup -c",
     "start": "rollup -c",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
+    "prepublishOnly": "yarn build",
     "deploy": "gh-pages --dist . --src '{index.html,dist/**/*}' --git git"
   },
   "keywords": [
