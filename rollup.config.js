@@ -1,11 +1,10 @@
-import pkg from "./package.json";
-import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
-import external from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
+import filesize from "rollup-plugin-filesize";
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
-import filesize from "rollup-plugin-filesize";
+
+import pkg from "./package.json";
 
 const prod = process.env.NODE_ENV === "production";
 
@@ -28,14 +27,12 @@ export default {
   ],
   external: ["react", "react-dom"],
   plugins: [
-    resolve(),
     babel({
       exclude: "node_modules/**"
     }),
-    external(),
     prod && terser(),
     prod && filesize(),
-    !prod && livereload(),
-    !prod && serve()
+    !prod && serve(),
+    !prod && livereload()
   ]
 };
