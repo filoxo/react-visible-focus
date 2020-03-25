@@ -15,7 +15,7 @@
     "cypress": "cypress",
     "build": "NODE_ENV=production rollup -c",
     "start": "rollup -c -w",
-    "predeploy": "yarn build",
+    "predeploy": "yarn prepublishOnly",
     "prepublishOnly": "yarn run-s test build",
     "deploy": "gh-pages --dist . --src '{index.html,dist/**/*}' --git git"
   },
