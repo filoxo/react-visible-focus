@@ -10,15 +10,16 @@ See it in action at https://filoxo.github.io/react-visible-focus/
 ## Installation
 
 ```sh
-yarn add -S react-visible-focus
+yarn add react-visible-focus
 # or
-npm i -S react-visible-focus
+npm i react-visible-focus
 ```
 
 ## Import
 
 ```js
-import FocusVisible from 'react-visible-focus';
+import React from 'react'
+import FocusVisible from 'react-visible-focus'
 
 export default function YourComponent(props) {
   return (
@@ -30,8 +31,10 @@ export default function YourComponent(props) {
 or via CDN
 
 ```html
+<main id="root"></main>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 <script src="/react-visible-focus.umd.js"></script>
-
 <script>
   const App = () => React.createElement(
     ReactVisibleFocus,
@@ -54,7 +57,7 @@ Provide the following CSS globally.
 
 ### styled-components example
 
-CSS-in-JS options, such as styled-components, are easily supported through the `elem` prop.
+CSS-in-JS options, such as [`styled-components`](https://styled-components.com/), are easily supported through the `elem` prop.
 
 ```js
 import React from 'react'
