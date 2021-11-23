@@ -84,7 +84,7 @@ const MyContainer = styled.div`
 
 ## Development 
 
-Run `yarn start` to run the example page with livereloading enabled.
+Run `yarn start` to run [the example page](http://localhost:10001/) with livereloading enabled.
 
 Run `yarn build` to create a production build.
 
